@@ -1,5 +1,6 @@
 //import hoverable resume component
 //import spotify component
+import Resume from './components/resume/Resume'
 import localFont from "next/font/local"
 const djournalFont = localFont({
   src: './fonts/djournal.regular.ttf',
@@ -18,6 +19,7 @@ export default function Home() {
       {/* resume section */}
       <section className="min-h-screen">
       {/* have component be here */}
+      <Resume/>
       </section>
       {/* spotify widg section */}
       <footer className="min-h-screen"></footer>
