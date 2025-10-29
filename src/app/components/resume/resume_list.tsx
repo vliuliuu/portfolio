@@ -17,21 +17,23 @@ type resume_props = {
 //
 export default function ResumeList({items, active_id, onHover}: resume_props){
     return(
-    <ul className="">
+    <div className="space-y-4">
       {items.map((item) => (
-        <li
+        <div
           key={item.id}
           // When the mouse enters, call the onHover function from the parent
           onMouseEnter={() => onHover(item.id)}
-          className={`p-4 rounded-md cursor-pointer transition-all duration-300 ${
-            // active styling
-            active_id === item.id ? 'bg-gray-400 text-black' : 'bg-gray-800'
+          className={`p-4 rounded-md cursor-pointer transition-all duration-300 ease-out ${
+            // active styling with scale effect
+            active_id === item.id 
+              ? 'bg-gray-400 text-black scale-100 shadow-lg' 
+              : 'bg-gray-800 scale-95'
           }`}
         >
           <h3 className="text-xl font-bold">{item.title}</h3>
           <p className="mt-2">{item.text}</p>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
     );
 }

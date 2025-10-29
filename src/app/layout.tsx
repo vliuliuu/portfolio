@@ -15,11 +15,53 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const mochiFont = localFont({
-  src: './fonts/Mochibop-Demo.ttf', 
+
+// DEFAULT FONT is manrope :D
+
+const manropeFont = localFont({
+  src:[
+    {
+      path: './fonts/manrope/Manrope-ExtraLight.ttf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: './fonts/manrope/Manrope-Light.ttf',
+      weight:'200',
+      style: 'normal',
+    },
+    {
+      path: './fonts/manrope/Manrope-Medium.ttf',
+      weight:'300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/manrope/Manrope-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ]
 });
-
-
+const manrope_bold_Font = localFont({
+  src: [
+    {
+      path: './fonts/manrope/Manrope-SemiBold.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/manrope/Manrope-Bold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/manrope/Manrope-ExtraBold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+    variable: '--font-manrope',
+});
 
 //METADATA
 
@@ -37,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <body className={mochiFont.className}>
+      <body className={manropeFont.className}>
         {children}
       </body>
     </html>

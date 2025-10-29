@@ -11,6 +11,7 @@ import ResumeList from './resume_list';
 
 const resume_container = [
     {
+        
         id: 1,
         title: "bleble",
         text: "blebe",
@@ -30,7 +31,14 @@ const resume_container = [
         text: "blebe",
         img_src: "/resume_images/SIDEEYEGE.png",
         img_txt: "belbeh"
-    }
+    },
+        {
+        id: 4,
+        title: "bleble",
+        text: "blebe",
+        img_src: "/resume_images/angelhehe.jpeg",
+        img_txt: "belbeh"
+    },
 ]
 
 export default function Resume(){
@@ -42,14 +50,17 @@ export default function Resume(){
 
     //serve da active_id's img + text
     return(
-        <section className='flex flex-row gap-16 p-8'>
-            <div className='w-1/3 ml-70 pr-20'>    
+        <section className='flex flex-col lg:flex-row gap-8 lg:gap-16 p-4 md:p-8 max-w-7xl mx-auto'>
+            {/* Image - hidden on mobile, visible on desktop */}
+            <div className='hidden lg:block lg:w-1/2'>
                 <ResumeImage 
                     img_src={active_item?.img_src}
                     img_txt={active_item?.img_txt}
                 />
             </div>
-            <div className='w-1/3 bg-gray'>
+            
+            {/* List - full width on mobile, half on desktop */}
+            <div className='w-full lg:w-1/2 bg-gray-800 '>
                 <ResumeList
                     items={resume_container}
                     active_id={active_id}

@@ -2,6 +2,12 @@
 //import spotify component
 import Resume from './components/resume/Resume'
 import localFont from "next/font/local"
+
+const mochiFont = localFont({
+  src: './fonts/Mochibop-Demo.ttf', 
+  variable: '--font-mochi',
+});
+
 const djournalFont = localFont({
   src: './fonts/djournal.regular.ttf',
 });
@@ -9,12 +15,13 @@ const djournalFont = localFont({
 export default function Home() {
   return (
     <div>
-      <main className="flex justify-center p-24 h-screen">
+      <main className="flex flex-col mt-40 h-screen">
         <h1 className="text-6xl text-center">
-        <span className="text-6xl">hi!</span>
-        <div className="h-15"></div>
+        <span className={`${mochiFont.className}`}>hi!</span>
+        <div className="h-10"></div>
         <span className={`${djournalFont.className}`}>I'm Valentina</span>
         </h1>
+        <h2 className="text-2xl mt-20 text-center">i'm a ____ @ _____</h2>
       </main>
       {/* resume section */}
       <section className="min-h-screen">
