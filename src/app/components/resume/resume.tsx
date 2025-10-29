@@ -60,7 +60,7 @@ export default function Resume(){
             </div>
             
             {/* List - full width on mobile, half on desktop */}
-            <div className='w-full lg:w-1/2 bg-gray-800 '>
+            <div className='max-w-3/4 min-w-1/2 rounded-md lg:w-1/2 bg-gray-800 '>
                 <ResumeList
                     items={resume_container}
                     active_id={active_id}
