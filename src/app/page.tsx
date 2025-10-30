@@ -20,6 +20,7 @@ import Link from "next/link" //for the gh, linkedin links
 
 import Resume from './components/resume/Resume'
 import localFont from "next/font/local"
+import { SpotifyWidget } from "./api/spotify/spotify";
 
 const mochiFont = localFont({
   src: './fonts/Mochibop-Demo.ttf', 
@@ -38,17 +39,15 @@ export default function Home() {
     <div>
       <Menubar>
         <MenubarMenu>
-          <MenubarTrigger>File</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>New Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Share</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Print</MenubarItem>
-          </MenubarContent>
+          <MenubarTrigger className="text-2xl">
+            {/* <img>gh logo</img> */}
+          </MenubarTrigger>
+          <MenubarTrigger className="text-2xl">
+            {/* <img>smthing nerdy</img> */}
+          </MenubarTrigger>
+          <MenubarTrigger className="text-2xl">
+            {/* <img>linkedin logo</img> */}
+          </MenubarTrigger>
         </MenubarMenu>
       </Menubar>
       <main className="flex flex-col mt-40 mb-50 h-1/2">
@@ -60,12 +59,14 @@ export default function Home() {
         <h2 className="text-2xl mt-20 text-center">i'm a ____ @ _____</h2>
       </main>
       {/* resume section */}
-      <section className="min-h-1/2">
+      <section className="min-h-1/2 justify-center">
       {/* have component be here */}
       <Resume/>
       </section>
       {/* spotify widg section */}
-      <footer className="min-h-1/2"></footer>
+      <div className="mt-20 mb-20 flex justify-center">        
+        <SpotifyWidget></SpotifyWidget>
+        </div>
       </div>
   );
 }

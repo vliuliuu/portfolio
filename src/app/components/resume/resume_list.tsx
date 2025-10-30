@@ -17,7 +17,7 @@ type resume_props = {
 //
 export default function ResumeList({items, active_id, onHover}: resume_props){
     return(
-    <div className="space-y-4">
+    <div className="grid items-center justify-items">
       {items.map((item) => (
         <div
           key={item.id}
@@ -30,8 +30,8 @@ export default function ResumeList({items, active_id, onHover}: resume_props){
               : 'bg-gray-800 scale-95'
           }`}
         >
-          <h3 className="text-xl font-bold">{item.title}</h3>
-          <p className="mt-2">{item.text}</p>
+          <h3 className="text-2xl font-bold">{item.title}</h3>
+          <p className="mt-4 ml-2">{item.text}</p>
         </div>
       ))}
     </div>

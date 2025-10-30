@@ -9,34 +9,39 @@ import ResumeList from './resume_list';
 //resume has function that resume_list calls on hover; basically highlighting the hovered text and switch to respective img
 //can't pass state up; just have function in parent, that child calls upon a certain event
 
+
+//OK notes for this: i want containers for the text inside of the list bro can i just import some stuff from shadcn
+//also have a divider in the resume container to sep exp and project's 
+//ALSO the manrope font is ugly lmfao <--can change this very lastly
+
 const resume_container = [
     {
         
         id: 1,
-        title: "bleble",
-        text: "blebe",
+        title: "SCaLEx A/V Volunteer",
+        text: "- lorem ipsum dolor sit amet consectetur adipiscing elit",
         img_src: "/resume_images/ye.jpg",
         img_txt: "belbeh"
     },
     {
         id: 2,
-        title: "bleble",
-        text: "blebe",
+        title: "Mentor @GWC",
+        text: "- lorem ipsum dolor sit amet consectetur adipiscing elitipsum dolor sit amet dipiscing elit",
         img_src: "/resume_images/angelhehe.jpeg",
         img_txt: "belbeh"
     },
     {
         id: 3,
-        title: "bleble",
-        text: "blebe",
+        title: "Mentor @SWE",
+        text: "- lorem ipsum dolor sit amet consectetur adipiscing elitipsum dolor sit amet consectetur adipiscing elitipsum dolor sit amet consectetur adipiscing elit",
         img_src: "/resume_images/SIDEEYEGE.png",
         img_txt: "belbeh"
     },
         {
         id: 4,
-        title: "bleble",
-        text: "blebe",
-        img_src: "/resume_images/angelhehe.jpeg",
+        title: " ",
+        text: " ",
+        img_src: "/resume_images/heartgeee.jpg",
         img_txt: "belbeh"
     },
 ]
@@ -50,8 +55,8 @@ export default function Resume(){
 
     //serve da active_id's img + text
     return(
-        <section className='flex flex-col lg:flex-row gap-8 lg:gap-16 p-4 md:p-8 max-w-7xl mx-auto'>
-            {/* Image - hidden on mobile, visible on desktop */}
+        <section className='flex flex-col lg:flex-row gap-8 lg:gap-16 p-4 md:p-8 max-w-4/5 mx-auto'>
+            {/* img styling */}
             <div className='hidden lg:block lg:w-1/2'>
                 <ResumeImage 
                     img_src={active_item?.img_src}
@@ -59,8 +64,8 @@ export default function Resume(){
                 />
             </div>
             
-            {/* List - full width on mobile, half on desktop */}
-            <div className='max-w-3/4 min-w-1/2 rounded-md lg:w-1/2 bg-gray-800 '>
+            {/* list styling */}
+            <div className=' w-3/4 mx-auto rounded-md lg:w-3/4 bg-gray-800 '>
                 <ResumeList
                     items={resume_container}
                     active_id={active_id}
